@@ -12,7 +12,17 @@ class Homepage extends StatelessWidget {
         backgroundColor: Colors.amber,
         title: Text('Play Quiz'),
       ),
-      body: Container(),
+      body: Container(
+          child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        physics: ScrollPhysics(parent: BouncingScrollPhysics()),
+        child: Row(
+          children: [
+            Image.asset('assets/moru_backgroung.png'),
+            Image.asset('assets/moru_backgroung.png'),
+          ],
+        ),
+      )),
     ));
   }
 }
