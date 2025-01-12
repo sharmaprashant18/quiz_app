@@ -17,10 +17,7 @@ class Homepage extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         physics: ScrollPhysics(parent: BouncingScrollPhysics()),
         child: Row(
-          children: [
-            Image.asset('assets/moru_backgroung.png'),
-            Image.asset('assets/moru_backgroung.png'),
-          ],
+          children: [],
         ),
       )),
     ));
