@@ -7,34 +7,33 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   actions: [
-        //     IconButton(onPressed: () {}, icon: Icon(Icons.add_ic_call_outlined))
-        //   ],
-        // ),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: Row(
+        appBar: AppBar(
+          elevation: 1,
+          toolbarHeight: 100,
+          title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    'Hi, John',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.abc))
-                ],
-              )
-
-              // Text(
-              //   "Let's make this day productive",
-              //   style: TextStyle(fontSize: 16, color: Colors.grey),
-              // ),
+              Text(
+                'Hi, JOHN',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+              Text(
+                "Let's make the day productive",
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+              ),
             ],
           ),
+          actions: [
+            IconButton(
+              isSelected: true,
+              onPressed: () {},
+              icon: Image.asset(
+                'assets/icon_image.png',
+              ),
+            )
+          ],
         ),
+        body: Container(),
       ),
     );
   }
