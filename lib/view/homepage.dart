@@ -7,18 +7,35 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.amber,
-            title: Text('Play Quiz'),
+        // appBar: AppBar(
+        //   actions: [
+        //     IconButton(onPressed: () {}, icon: Icon(Icons.add_ic_call_outlined))
+        //   ],
+        // ),
+        body: Container(
+          margin: EdgeInsets.all(20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'Hi, John',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.abc))
+                ],
+              )
+
+              // Text(
+              //   "Let's make this day productive",
+              //   style: TextStyle(fontSize: 16, color: Colors.grey),
+              // ),
+            ],
           ),
-          body: AnimatedContainer(
-            duration: Duration(milliseconds: 500),
-            color: Colors.black,
-            child: Text(
-              'Hello',
-              style: TextStyle(color: Colors.black),
-            ),
-          )),
+        ),
+      ),
     );
   }
 }

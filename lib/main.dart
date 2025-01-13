@@ -12,6 +12,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        // fontFamily: "Montserrat",
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffF0EEE5)),
+      ),
       home: Homepage(),
     );
   }
