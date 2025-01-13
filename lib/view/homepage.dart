@@ -7,14 +7,16 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.amber,
           appBar: AppBar(
             backgroundColor: Colors.amber,
             title: Text('Play Quiz'),
           ),
-          body: Container(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+          body: AnimatedContainer(
+            duration: Duration(milliseconds: 500),
+            color: Colors.black,
+            child: Text(
+              'Hello',
+              style: TextStyle(color: Colors.black),
             ),
           )),
     );
