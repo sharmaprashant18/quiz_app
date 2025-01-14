@@ -8,6 +8,7 @@ class QuizApi {
   Future<QuizModel> getQuestion() async {
     try {
       final response = await http.get(Uri.parse(quizApp));
+      print(response);
       if (response.statusCode == 200) {
         return QuizModel.fromJson(jsonDecode(response.body));
       } else {

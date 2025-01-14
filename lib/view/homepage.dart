@@ -17,6 +17,9 @@ class Homepage extends StatelessWidget {
                 'Hi, JOHN',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
+              SizedBox(
+                height: 3,
+              ),
               Text(
                 "Let's make the day productive",
                 style: TextStyle(fontSize: 16, color: Colors.grey),
@@ -35,41 +38,58 @@ class Homepage extends StatelessWidget {
             )
           ],
         ),
-        body: SizedBox(
-          height: 150,
-          child: Card(
-            margin: EdgeInsets.all(20),
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 150,
+              child: Card(
+                margin: EdgeInsets.all(20),
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                elevation: 10,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage(
+                        'assets/reward.png',
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: reward("Ranking", '348'),
+                    ),
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(
+                        'assets/coin.png',
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: reward("Points", '1200'),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            elevation: 10,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CircleAvatar(
-                  radius: 35,
-                  backgroundImage: AssetImage(
-                    'assets/reward.png',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: reward("Ranking", '348'),
-                ),
-                CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage(
-                    'assets/coin.png',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: reward("Points", '1200'),
-                ),
-              ],
+            SizedBox(
+              height: 20,
             ),
-          ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Let's play",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
