@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/model/quiz_model.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Homepage extends StatefulWidget {
+  Homepage({super.key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  QuizModel? response;
 
   @override
   Widget build(BuildContext context) {
@@ -82,10 +90,21 @@ class Homepage extends StatelessWidget {
             ),
             Container(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "Let's play",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "Let's play",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'Questions:' +
+                          (response?.question?.toString() ??
+                              "Question Not available"),
+                      style: TextStyle(fontSize: 40),
+                    )
+                  ],
                 ),
               ),
             ),
