@@ -48,19 +48,25 @@ class Homepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CircleAvatar(
-                  radius: 30,
+                  radius: 35,
                   backgroundImage: AssetImage(
                     'assets/reward.png',
                   ),
                 ),
-                reward("Ranking", '348'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: reward("Ranking", '348'),
+                ),
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage(
                     'assets/coin.png',
                   ),
                 ),
-                reward("Points", '1200'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: reward("Points", '1200'),
+                ),
               ],
             ),
           ),
@@ -82,7 +88,7 @@ class Homepage extends StatelessWidget {
           Text(
             data,
             style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue),
+                fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
           ),
         ],
       ),
