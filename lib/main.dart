@@ -15,8 +15,10 @@ class Home extends StatelessWidget {
       theme: ThemeData(
         // fontFamily: "Montserrat",
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffF0EEE5)),
+        primarySwatch: Colors.blue,
       ),
-      home: Homepage(),
+      // home: Homepage(),
+      home: QuizScreen(),
     );
   }
 }
