@@ -100,8 +100,9 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Text(
                       'Questions:' +
-                          (response?.question?.toString() ??
-                              "Question Not available"),
+                          (response?.results?.isNotEmpty == true
+                              ? response!.results![2].question?.toString() ?? ''
+                              : ''),
                       style: TextStyle(fontSize: 40),
                     )
                   ],
