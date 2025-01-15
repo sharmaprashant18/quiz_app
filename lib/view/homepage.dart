@@ -46,70 +46,78 @@ class _HomepageState extends State<Homepage> {
             )
           ],
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 150,
-              child: Card(
-                margin: EdgeInsets.all(20),
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              childAspectRatio: 3 / 1,
+              mainAxisSpacing: 2,
+              crossAxisSpacing: 2),
+          itemCount: response?.results?.length,
+          itemBuilder: (context, index) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 150,
+                  child: Card(
+                    margin: EdgeInsets.all(20),
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    elevation: 10,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundImage: AssetImage(
+                            'assets/reward.png',
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: reward("Ranking", '348'),
+                        ),
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundImage: AssetImage(
+                            'assets/coin.png',
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: reward("Points", '1200'),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                elevation: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage: AssetImage(
-                        'assets/reward.png',
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: reward("Ranking", '348'),
-                    ),
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundImage: AssetImage(
-                        'assets/coin.png',
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: reward("Points", '1200'),
-                    ),
-                  ],
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  children: [
-                    Text(
-                      "Let's play",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Let's play",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Questions:' +
+                              (response?.results?[1].question.toString() ?? ''),
+                          style: TextStyle(fontSize: 40),
+                        )
+                      ],
                     ),
-                    Text(
-                      'Questions:' +
-                          (response?.results?.isNotEmpty == true
-                              ? response!.results![2].question?.toString() ?? ''
-                              : ''),
-                      style: TextStyle(fontSize: 40),
-                    )
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          ],
+              ],
+            );
+          },
         ),
       ),
     );
