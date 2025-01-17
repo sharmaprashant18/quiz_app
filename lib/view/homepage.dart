@@ -135,55 +135,68 @@
 //   }
 // }
 
+//QuizApp
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'quiz_screen.dart';
+
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quiz App'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Welcome to Quiz App!',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const QuizScreen(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 32,
+                    vertical: 16,
+                  ),
+                ),
+                child: const Text(
+                  'Start Quiz',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 // import 'package:flutter/material.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// import 'quiz_screen.dart';
-
-// class HomeScreen extends ConsumerWidget {
-//   const HomeScreen({Key? key}) : super(key: key);
+// class Homepage extends StatelessWidget {
+//   const Homepage({super.key});
 
 //   @override
-//   Widget build(BuildContext context, WidgetRef ref) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Quiz App'),
-//       ),
-//       body: Center(
-//         child: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               const Text(
-//                 'Welcome to Quiz App!',
-//                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-//               ),
-//               const SizedBox(height: 24),
-//               ElevatedButton(
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(
-//                       builder: (context) => const QuizScreen(),
-//                     ),
-//                   );
-//                 },
-//                 style: ElevatedButton.styleFrom(
-//                   padding: const EdgeInsets.symmetric(
-//                     horizontal: 32,
-//                     vertical: 16,
-//                   ),
-//                 ),
-//                 child: const Text(
-//                   'Start Quiz',
-//                   style: TextStyle(fontSize: 18),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
+//   Widget build(BuildContext context) {
+//     return Scaffold();
 //   }
 // }
