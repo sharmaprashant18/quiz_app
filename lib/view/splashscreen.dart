@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'package:lottie/lottie.dart';
 import 'package:quiz_app/view/homepage.dart';
@@ -8,6 +9,8 @@ class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final actualHeight = MediaQuery.of(context).size.height;
+    FlutterNativeSplash.remove();
+
     return AnimatedSplashScreen(
       splash: Column(
         children: [

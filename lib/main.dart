@@ -6,6 +6,7 @@ import 'package:quiz_app/view/splashscreen.dart';
 
 void main() {
   runApp(ProviderScope(child: QuizApp()));
+  Future.delayed(Duration(milliseconds: 10));
 }
 
 class QuizApp extends StatelessWidget {
