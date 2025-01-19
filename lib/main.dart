@@ -40,7 +40,7 @@ class QuizApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.amber, scaffoldBackgroundColor: Colors.black),
+          primarySwatch: Colors.amber, scaffoldBackgroundColor: Colors.white),
       home: Homepage(),
     );
   }
