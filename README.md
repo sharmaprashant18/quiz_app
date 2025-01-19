@@ -1,16 +1,5 @@
 # quiz_app
 
-A new Flutter project.
+This a quiz app in flutter by using the api from Open Trivia (https://opentdb.com/). In this project there a Animated Splash screen at the starting of the application the the home screen appears with the elevated button of Start Quiz. The the quiz screen appears where there is timer of 30 seconds. If any answer is not choosen till 30 seconds then it automatically goes to the another question.At the end of all the questions result is shown. In this app dio library is used to fetch the API and riverpod as a StateManagement.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://github.com/user-attachments/assets/cf3acc37-b079-4f25-bd66-b9f8b2b13321
