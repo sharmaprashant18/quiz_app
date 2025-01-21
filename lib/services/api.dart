@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 import 'package:quiz_app/model/questions.dart';
 
@@ -19,5 +20,14 @@ class QuizApi {
     } catch (e) {
       throw Exception('Error fetching questions:$e');
     }
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
